@@ -1,0 +1,1324 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20213.21.1018.0949                               -->
+<workbook source-build='2021.3.3 (20213.21.1018.0949)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelRelationshipPerfOptions.true...ObjectModelRelationshipPerfOptions />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Top Client Rent Due' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+        <calculation class='tableau' formula='5' />
+        <range granularity='5' max='20' min='5' />
+      </column>
+    </datasource>
+    <datasource caption='OLAP_SAKILA_CUSTOMER' inline='true' name='federated.1a4jq0705nj5du1168lk30nnvxep' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='localhost' name='sqlserver.00whlhp1x450bl1fhcrgc1eabwua'>
+            <connection authentication='sqlserver' class='sqlserver' dbname='OLAP_SAKILA_CUSTOMER' odbc-native-protocol='yes' one-time-sql='' server='localhost' username='sa' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='DIM_ADDRESS' table='[dbo].[DIM_ADDRESS]' type='table' />
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='FACT_CUSTOMER' table='[dbo].[FACT_CUSTOMER]' type='table' />
+          <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='DIM_ADDRESS' table='[dbo].[DIM_ADDRESS]' type='table' />
+          <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='DIM_PAYMENT' table='[dbo].[DIM_PAYMENT]' type='table' />
+          <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='DIM_RENTAL' table='[dbo].[DIM_RENTAL]' type='table' />
+          <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='DIM_TIME' table='[dbo].[DIM_TIME]' type='table' />
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[ADDRESS_ID (DIM_ADDRESS)]' value='[DIM_ADDRESS].[ADDRESS_ID]' />
+          <map key='[ADDRESS_ID]' value='[FACT_CUSTOMER].[ADDRESS_ID]' />
+          <map key='[AMOUNT]' value='[DIM_PAYMENT].[AMOUNT]' />
+          <map key='[CITY]' value='[DIM_ADDRESS].[CITY]' />
+          <map key='[COUNTRY]' value='[DIM_ADDRESS].[COUNTRY]' />
+          <map key='[CUSTOMER_ID]' value='[FACT_CUSTOMER].[CUSTOMER_ID]' />
+          <map key='[DATE]' value='[DIM_TIME].[DATE]' />
+          <map key='[DAYS_LATE]' value='[DIM_RENTAL].[DAYS_LATE]' />
+          <map key='[DAY]' value='[DIM_TIME].[DAY]' />
+          <map key='[DAY_OF_WEEK]' value='[DIM_TIME].[DAY_OF_WEEK]' />
+          <map key='[MONTH]' value='[DIM_TIME].[MONTH]' />
+          <map key='[NAME]' value='[FACT_CUSTOMER].[NAME]' />
+          <map key='[PAYMENT_ID (DIM_PAYMENT)]' value='[DIM_PAYMENT].[PAYMENT_ID]' />
+          <map key='[PAYMENT_ID]' value='[FACT_CUSTOMER].[PAYMENT_ID]' />
+          <map key='[RENTAL_DATE]' value='[DIM_RENTAL].[RENTAL_DATE]' />
+          <map key='[RENTAL_DURATION]' value='[DIM_RENTAL].[RENTAL_DURATION]' />
+          <map key='[RENTAL_ID (DIM_RENTAL)]' value='[DIM_RENTAL].[RENTAL_ID]' />
+          <map key='[RENTAL_ID]' value='[FACT_CUSTOMER].[RENTAL_ID]' />
+          <map key='[SEMESTER]' value='[DIM_TIME].[SEMESTER]' />
+          <map key='[TIME_ID (DIM_TIME)]' value='[DIM_TIME].[TIME_ID]' />
+          <map key='[TIME_ID]' value='[FACT_CUSTOMER].[TIME_ID]' />
+          <map key='[TRIMESTER]' value='[DIM_TIME].[TRIMESTER]' />
+          <map key='[YEAR]' value='[DIM_TIME].[YEAR]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>CUSTOMER_ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[CUSTOMER_ID]</local-name>
+            <parent-name>[FACT_CUSTOMER]</parent-name>
+            <remote-alias>CUSTOMER_ID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RENTAL_ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[RENTAL_ID]</local-name>
+            <parent-name>[FACT_CUSTOMER]</parent-name>
+            <remote-alias>RENTAL_ID</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PAYMENT_ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[PAYMENT_ID]</local-name>
+            <parent-name>[FACT_CUSTOMER]</parent-name>
+            <remote-alias>PAYMENT_ID</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ADDRESS_ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[ADDRESS_ID]</local-name>
+            <parent-name>[FACT_CUSTOMER]</parent-name>
+            <remote-alias>ADDRESS_ID</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIME_ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[TIME_ID]</local-name>
+            <parent-name>[FACT_CUSTOMER]</parent-name>
+            <remote-alias>TIME_ID</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>NAME</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[NAME]</local-name>
+            <parent-name>[FACT_CUSTOMER]</parent-name>
+            <remote-alias>NAME</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>90</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ADDRESS_ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[ADDRESS_ID (DIM_ADDRESS)]</local-name>
+            <parent-name>[DIM_ADDRESS]</parent-name>
+            <remote-alias>ADDRESS_ID</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CITY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CITY]</local-name>
+            <parent-name>[DIM_ADDRESS]</parent-name>
+            <remote-alias>CITY</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>COUNTRY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[COUNTRY]</local-name>
+            <parent-name>[DIM_ADDRESS]</parent-name>
+            <remote-alias>COUNTRY</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PAYMENT_ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[PAYMENT_ID (DIM_PAYMENT)]</local-name>
+            <parent-name>[DIM_PAYMENT]</parent-name>
+            <remote-alias>PAYMENT_ID</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AMOUNT</remote-name>
+            <remote-type>131</remote-type>
+            <local-name>[AMOUNT]</local-name>
+            <parent-name>[DIM_PAYMENT]</parent-name>
+            <remote-alias>AMOUNT</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>5</precision>
+            <scale>2</scale>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_DECIMAL&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_NUMERIC&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RENTAL_ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[RENTAL_ID (DIM_RENTAL)]</local-name>
+            <parent-name>[DIM_RENTAL]</parent-name>
+            <remote-alias>RENTAL_ID</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RENTAL_DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[RENTAL_DATE]</local-name>
+            <parent-name>[DIM_RENTAL]</parent-name>
+            <remote-alias>RENTAL_DATE</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>RENTAL_DURATION</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[RENTAL_DURATION]</local-name>
+            <parent-name>[DIM_RENTAL]</parent-name>
+            <remote-alias>RENTAL_DURATION</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DAYS_LATE</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[DAYS_LATE]</local-name>
+            <parent-name>[DIM_RENTAL]</parent-name>
+            <remote-alias>DAYS_LATE</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TIME_ID</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[TIME_ID (DIM_TIME)]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>TIME_ID</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>false</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATE</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[DATE]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>DATE</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YEAR</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[YEAR]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>YEAR</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MONTH</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[MONTH]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>MONTH</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DAY</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[DAY]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>DAY</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TRIMESTER</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[TRIMESTER]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>TRIMESTER</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>SEMESTER</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[SEMESTER]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>SEMESTER</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DAY_OF_WEEK</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[DAY_OF_WEEK]</local-name>
+            <parent-name>[DIM_TIME]</parent-name>
+            <remote-alias>DAY_OF_WEEK</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Sum' caption='Address Id (Dim Address)' datatype='integer' name='[ADDRESS_ID (DIM_ADDRESS)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Address Id' datatype='integer' name='[ADDRESS_ID]' role='dimension' type='ordinal' />
+      <column caption='Amount' datatype='real' name='[AMOUNT]' role='measure' type='quantitative' />
+      <column caption='City' datatype='string' name='[CITY]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Country' datatype='string' name='[COUNTRY]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Customer Id' datatype='integer' name='[CUSTOMER_ID]' role='dimension' type='ordinal' />
+      <column caption='Subset labels' datatype='string' name='[Calculation_1236519611361026055]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [Top N Customers by Sales]&#13;&#10;THEN &quot;Top&quot; + STR([Parameters].[Parameter 1]) + &quot; Customers&quot;&#13;&#10;ELSE &quot;Others&quot;&#13;&#10;END' />
+      </column>
+      <column caption='Date' datatype='datetime' name='[DATE]' role='dimension' type='ordinal' />
+      <column caption='Days Late' datatype='integer' name='[DAYS_LATE]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[DAY]' role='dimension' type='quantitative' />
+      <column caption='Day Of Week' datatype='string' name='[DAY_OF_WEEK]' role='dimension' type='nominal' />
+      <column caption='Month' datatype='integer' name='[MONTH]' role='dimension' type='quantitative' />
+      <column caption='Name' datatype='string' name='[NAME]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='Payment Id (Dim Payment)' datatype='integer' name='[PAYMENT_ID (DIM_PAYMENT)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Payment Id' datatype='integer' name='[PAYMENT_ID]' role='dimension' type='ordinal' />
+      <column caption='Rental Date' datatype='datetime' name='[RENTAL_DATE]' role='dimension' type='ordinal' />
+      <column caption='Rental Duration' datatype='integer' name='[RENTAL_DURATION]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Rental Id (Dim Rental)' datatype='integer' name='[RENTAL_ID (DIM_RENTAL)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Rental Id' datatype='integer' name='[RENTAL_ID]' role='dimension' type='ordinal' />
+      <column caption='Semester' datatype='integer' name='[SEMESTER]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Time Id (Dim Time)' datatype='integer' name='[TIME_ID (DIM_TIME)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Time Id' datatype='integer' name='[TIME_ID]' role='dimension' type='ordinal' />
+      <column caption='Trimester' datatype='integer' name='[TRIMESTER]' role='measure' type='quantitative' />
+      <column caption='Year' datatype='integer' name='[YEAR]' role='dimension' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_ADDRESS' datatype='table' name='[__tableau_internal_object_id__].[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_PAYMENT' datatype='table' name='[__tableau_internal_object_id__].[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_RENTAL' datatype='table' name='[__tableau_internal_object_id__].[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='DIM_TIME' datatype='table' name='[__tableau_internal_object_id__].[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='FACT_CUSTOMER' datatype='table' name='[__tableau_internal_object_id__].[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]' role='measure' type='quantitative' />
+      <column-instance column='[RENTAL_DATE]' derivation='Month' name='[mn:RENTAL_DATE:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[NAME]' derivation='None' name='[none:NAME:nk]' pivot='key' type='nominal' />
+      <group caption='Top N Customer by due Rent' name='[Top N Customer by due Rent]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+          <groupfilter direction='DESC' expression='COUNT([DAYS_LATE])' function='order' user:ui-marker='order'>
+            <groupfilter function='level-members' level='[NAME]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <group caption='Top N Customers by Sales' name='[Top N Customers by Sales]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter count='10' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+          <groupfilter direction='DESC' expression='COUNT([AMOUNT])' function='order' user:ui-marker='order'>
+            <groupfilter function='level-members' level='[none:NAME:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </groupfilter>
+        </groupfilter>
+      </group>
+      <drill-paths>
+        <drill-path name='COUNTRY, CITY' />
+      </drill-paths>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/kenne/Documents/GitHubProjects/DataWarehouseProjectBDII/Dashboard/OLAP_SAKILA_CUSTOMER.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='11/13/2021 06:35:04 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C' table='[Extract].[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833' table='[Extract].[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]' type='table' />
+            <relation name='DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C' table='[Extract].[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]' type='table' />
+            <relation name='DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24' table='[Extract].[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24]' type='table' />
+            <relation name='DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6' table='[Extract].[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]' type='table' />
+            <relation name='DIM_TIME_BDFF8B3242F74924BB035576CD8FF929' table='[Extract].[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[ADDRESS_ID (DIM_ADDRESS)]' value='[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C].[ADDRESS_ID]' />
+            <map key='[ADDRESS_ID]' value='[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833].[ADDRESS_ID]' />
+            <map key='[AMOUNT]' value='[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24].[AMOUNT]' />
+            <map key='[CITY]' value='[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C].[CITY]' />
+            <map key='[COUNTRY]' value='[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C].[COUNTRY]' />
+            <map key='[CUSTOMER_ID]' value='[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833].[CUSTOMER_ID]' />
+            <map key='[DATE]' value='[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929].[DATE]' />
+            <map key='[DAYS_LATE]' value='[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6].[DAYS_LATE]' />
+            <map key='[DAY]' value='[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929].[DAY]' />
+            <map key='[DAY_OF_WEEK]' value='[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929].[DAY_OF_WEEK]' />
+            <map key='[MONTH]' value='[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929].[MONTH]' />
+            <map key='[NAME]' value='[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833].[NAME]' />
+            <map key='[PAYMENT_ID (DIM_PAYMENT)]' value='[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24].[PAYMENT_ID]' />
+            <map key='[PAYMENT_ID]' value='[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833].[PAYMENT_ID]' />
+            <map key='[RENTAL_DATE]' value='[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6].[RENTAL_DATE]' />
+            <map key='[RENTAL_DURATION]' value='[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6].[RENTAL_DURATION]' />
+            <map key='[RENTAL_ID (DIM_RENTAL)]' value='[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6].[RENTAL_ID]' />
+            <map key='[RENTAL_ID]' value='[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833].[RENTAL_ID]' />
+            <map key='[SEMESTER]' value='[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929].[SEMESTER]' />
+            <map key='[TIME_ID (DIM_TIME)]' value='[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929].[TIME_ID]' />
+            <map key='[TIME_ID]' value='[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833].[TIME_ID]' />
+            <map key='[TRIMESTER]' value='[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929].[TRIMESTER]' />
+            <map key='[YEAR]' value='[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929].[YEAR]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='OLAP_SAKILA_CUSTOMER' increment-value='%null%' refresh-type='create' rows-inserted='64789' timestamp-start='2021-11-13 18:35:02.701' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>CUSTOMER_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[CUSTOMER_ID]</local-name>
+              <parent-name>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</parent-name>
+              <remote-alias>CUSTOMER_ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>FACT_CUSTOMER</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16044</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RENTAL_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[RENTAL_ID]</local-name>
+              <parent-name>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</parent-name>
+              <remote-alias>RENTAL_ID</remote-alias>
+              <ordinal>1</ordinal>
+              <family>FACT_CUSTOMER</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16044</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PAYMENT_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PAYMENT_ID]</local-name>
+              <parent-name>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</parent-name>
+              <remote-alias>PAYMENT_ID</remote-alias>
+              <ordinal>2</ordinal>
+              <family>FACT_CUSTOMER</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16044</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ADDRESS_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ADDRESS_ID]</local-name>
+              <parent-name>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</parent-name>
+              <remote-alias>ADDRESS_ID</remote-alias>
+              <ordinal>3</ordinal>
+              <family>FACT_CUSTOMER</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1104</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TIME_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[TIME_ID]</local-name>
+              <parent-name>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</parent-name>
+              <remote-alias>TIME_ID</remote-alias>
+              <ordinal>4</ordinal>
+              <family>FACT_CUSTOMER</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16044</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>NAME</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[NAME]</local-name>
+              <parent-name>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</parent-name>
+              <remote-alias>NAME</remote-alias>
+              <ordinal>5</ordinal>
+              <family>FACT_CUSTOMER</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>1104</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ADDRESS_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ADDRESS_ID (DIM_ADDRESS)]</local-name>
+              <parent-name>[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]</parent-name>
+              <remote-alias>ADDRESS_ID</remote-alias>
+              <ordinal>6</ordinal>
+              <family>DIM_ADDRESS</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>603</approx-count>
+              <contains-null>false</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CITY</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CITY]</local-name>
+              <parent-name>[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]</parent-name>
+              <remote-alias>CITY</remote-alias>
+              <ordinal>7</ordinal>
+              <family>DIM_ADDRESS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>599</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>COUNTRY</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[COUNTRY]</local-name>
+              <parent-name>[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]</parent-name>
+              <remote-alias>COUNTRY</remote-alias>
+              <ordinal>8</ordinal>
+              <family>DIM_ADDRESS</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>109</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PAYMENT_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PAYMENT_ID (DIM_PAYMENT)]</local-name>
+              <parent-name>[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24]</parent-name>
+              <remote-alias>PAYMENT_ID</remote-alias>
+              <ordinal>9</ordinal>
+              <family>DIM_PAYMENT</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16049</approx-count>
+              <contains-null>false</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>AMOUNT</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[AMOUNT]</local-name>
+              <parent-name>[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24]</parent-name>
+              <remote-alias>AMOUNT</remote-alias>
+              <ordinal>10</ordinal>
+              <family>DIM_PAYMENT</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RENTAL_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[RENTAL_ID (DIM_RENTAL)]</local-name>
+              <parent-name>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</parent-name>
+              <remote-alias>RENTAL_ID</remote-alias>
+              <ordinal>11</ordinal>
+              <family>DIM_RENTAL</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16044</approx-count>
+              <contains-null>false</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RENTAL_DATE</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[RENTAL_DATE]</local-name>
+              <parent-name>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</parent-name>
+              <remote-alias>RENTAL_DATE</remote-alias>
+              <ordinal>12</ordinal>
+              <family>DIM_RENTAL</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>15233</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>RENTAL_DURATION</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[RENTAL_DURATION]</local-name>
+              <parent-name>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</parent-name>
+              <remote-alias>RENTAL_DURATION</remote-alias>
+              <ordinal>13</ordinal>
+              <family>DIM_RENTAL</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DAYS_LATE</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[DAYS_LATE]</local-name>
+              <parent-name>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</parent-name>
+              <remote-alias>DAYS_LATE</remote-alias>
+              <ordinal>14</ordinal>
+              <family>DIM_RENTAL</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>65</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TIME_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[TIME_ID (DIM_TIME)]</local-name>
+              <parent-name>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</parent-name>
+              <remote-alias>TIME_ID</remote-alias>
+              <ordinal>15</ordinal>
+              <family>DIM_TIME</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16049</approx-count>
+              <contains-null>false</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DATE</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[DATE]</local-name>
+              <parent-name>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</parent-name>
+              <remote-alias>DATE</remote-alias>
+              <ordinal>16</ordinal>
+              <family>DIM_TIME</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>46</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>YEAR</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[YEAR]</local-name>
+              <parent-name>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</parent-name>
+              <remote-alias>YEAR</remote-alias>
+              <ordinal>17</ordinal>
+              <family>DIM_TIME</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MONTH</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MONTH]</local-name>
+              <parent-name>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</parent-name>
+              <remote-alias>MONTH</remote-alias>
+              <ordinal>18</ordinal>
+              <family>DIM_TIME</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DAY</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[DAY]</local-name>
+              <parent-name>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</parent-name>
+              <remote-alias>DAY</remote-alias>
+              <ordinal>19</ordinal>
+              <family>DIM_TIME</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>11</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>TRIMESTER</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[TRIMESTER]</local-name>
+              <parent-name>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</parent-name>
+              <remote-alias>TRIMESTER</remote-alias>
+              <ordinal>20</ordinal>
+              <family>DIM_TIME</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>SEMESTER</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[SEMESTER]</local-name>
+              <parent-name>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</parent-name>
+              <remote-alias>SEMESTER</remote-alias>
+              <ordinal>21</ordinal>
+              <family>DIM_TIME</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DAY_OF_WEEK</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[DAY_OF_WEEK]</local-name>
+              <parent-name>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</parent-name>
+              <remote-alias>DAY_OF_WEEK</remote-alias>
+              <ordinal>22</ordinal>
+              <family>DIM_TIME</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='50' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[mn:RENTAL_DATE:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>7</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>6</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>5</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>8</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='CUSTOMER_ID' />
+        <field-sort-custom-order field='RENTAL_ID' />
+        <field-sort-custom-order field='PAYMENT_ID' />
+        <field-sort-custom-order field='ADDRESS_ID' />
+        <field-sort-custom-order field='TIME_ID' />
+        <field-sort-custom-order field='NAME' />
+      </field-sort-info>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Top Client Rent Due' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='5'>
+          <calculation class='tableau' formula='5' />
+          <range granularity='5' max='20' min='5' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='DIM_ADDRESS' id='DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C'>
+            <properties context=''>
+              <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='DIM_ADDRESS' table='[dbo].[DIM_ADDRESS]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C' table='[Extract].[DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C]' type='table' />
+            </properties>
+          </object>
+          <object caption='DIM_PAYMENT' id='DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24'>
+            <properties context=''>
+              <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='DIM_PAYMENT' table='[dbo].[DIM_PAYMENT]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24' table='[Extract].[DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24]' type='table' />
+            </properties>
+          </object>
+          <object caption='DIM_RENTAL' id='DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6'>
+            <properties context=''>
+              <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='DIM_RENTAL' table='[dbo].[DIM_RENTAL]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6' table='[Extract].[DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6]' type='table' />
+            </properties>
+          </object>
+          <object caption='DIM_TIME' id='DIM_TIME_BDFF8B3242F74924BB035576CD8FF929'>
+            <properties context=''>
+              <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='DIM_TIME' table='[dbo].[DIM_TIME]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='DIM_TIME_BDFF8B3242F74924BB035576CD8FF929' table='[Extract].[DIM_TIME_BDFF8B3242F74924BB035576CD8FF929]' type='table' />
+            </properties>
+          </object>
+          <object caption='FACT_CUSTOMER' id='FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833'>
+            <properties context=''>
+              <relation connection='sqlserver.00whlhp1x450bl1fhcrgc1eabwua' name='FACT_CUSTOMER' table='[dbo].[FACT_CUSTOMER]' type='table' />
+            </properties>
+            <properties context='extract'>
+              <relation name='FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833' table='[Extract].[FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[ADDRESS_ID]' />
+              <expression op='[ADDRESS_ID (DIM_ADDRESS)]' />
+            </expression>
+            <first-end-point object-id='FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_ADDRESS_D99CB3B5CCA84459AC79CC68D9BCCA1C' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[PAYMENT_ID]' />
+              <expression op='[PAYMENT_ID (DIM_PAYMENT)]' />
+            </expression>
+            <first-end-point object-id='FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_PAYMENT_7C9ADF46CA8141898A562F84A8F0FD24' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[RENTAL_ID]' />
+              <expression op='[RENTAL_ID (DIM_RENTAL)]' />
+            </expression>
+            <first-end-point object-id='FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_RENTAL_D519A92F0DD14BE7A6D2AC1BC51A24C6' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[TIME_ID]' />
+              <expression op='[TIME_ID (DIM_TIME)]' />
+            </expression>
+            <first-end-point object-id='FACT_CUSTOMER_E68AA8E947224E69B353A5CE950A1833' />
+            <second-end-point _.fcp.ObjectModelRelationshipPerfOptions.true...is-db-set-unique-key='true' object-id='DIM_TIME_BDFF8B3242F74924BB035576CD8FF929' unique-key='true' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Rentas Retrasadas'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Número de Rentas con Pagos Retrasados a lo Largo de los Meses</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='OLAP_SAKILA_CUSTOMER' name='federated.1a4jq0705nj5du1168lk30nnvxep' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1a4jq0705nj5du1168lk30nnvxep'>
+            <column caption='Date' datatype='datetime' name='[DATE]' role='dimension' type='ordinal' />
+            <column caption='Days Late' datatype='integer' name='[DAYS_LATE]' role='measure' type='quantitative' />
+            <column-instance column='[DAYS_LATE]' derivation='Count' name='[cnt:DAYS_LATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DATE]' derivation='Month' name='[mn:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1a4jq0705nj5du1168lk30nnvxep].[mn:DATE:ok] / [federated.1a4jq0705nj5du1168lk30nnvxep].[yr:DATE:ok])</rows>
+        <cols>[federated.1a4jq0705nj5du1168lk30nnvxep].[cnt:DAYS_LATE:qk]</cols>
+      </table>
+      <simple-id uuid='{401C87C8-E3D5-4A4B-973E-EEBFE3752E16}' />
+    </worksheet>
+    <worksheet name='Rentas por Nacionalidad '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Número de Rentas segmentado por zona según nacionalidad del cliente</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='OLAP_SAKILA_CUSTOMER' name='federated.1a4jq0705nj5du1168lk30nnvxep' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1a4jq0705nj5du1168lk30nnvxep'>
+            <column caption='Country' datatype='string' name='[COUNTRY]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='Name' datatype='string' name='[NAME]' role='dimension' type='nominal' />
+            <column-instance column='[NAME]' derivation='Count' name='[cnt:NAME:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[COUNTRY]' derivation='None' name='[none:COUNTRY:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1a4jq0705nj5du1168lk30nnvxep].[none:COUNTRY:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1a4jq0705nj5du1168lk30nnvxep].[cnt:NAME:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#59a14f' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1a4jq0705nj5du1168lk30nnvxep].[none:COUNTRY:nk]</rows>
+        <cols>[federated.1a4jq0705nj5du1168lk30nnvxep].[cnt:NAME:qk]</cols>
+      </table>
+      <simple-id uuid='{A27A36CD-9B95-432A-B475-50CC9B7420D0}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Top 10 de los Clientes con Más DVD Vencidos</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='OLAP_SAKILA_CUSTOMER' name='federated.1a4jq0705nj5du1168lk30nnvxep' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1a4jq0705nj5du1168lk30nnvxep'>
+            <column caption='Days Late' datatype='integer' name='[DAYS_LATE]' role='measure' type='quantitative' />
+            <column caption='Name' datatype='string' name='[NAME]' role='dimension' type='nominal' />
+            <column-instance column='[DAYS_LATE]' derivation='Count' name='[cnt:DAYS_LATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[NAME]' derivation='None' name='[none:NAME:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1a4jq0705nj5du1168lk30nnvxep].[Top N Customer by due Rent]' />
+          <filter class='categorical' column='[federated.1a4jq0705nj5du1168lk30nnvxep].[none:NAME:nk]'>
+            <groupfilter function='level-members' level='[none:NAME:nk]' />
+          </filter>
+          <slices>
+            <column>[federated.1a4jq0705nj5du1168lk30nnvxep].[none:NAME:nk]</column>
+            <column>[federated.1a4jq0705nj5du1168lk30nnvxep].[Top N Customer by due Rent]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1a4jq0705nj5du1168lk30nnvxep].[Top N Customer by due Rent]</rows>
+        <cols>[federated.1a4jq0705nj5du1168lk30nnvxep].[cnt:DAYS_LATE:qk]</cols>
+      </table>
+      <simple-id uuid='{2CBFD740-D553-488D-B861-F2F970A9ABF7}' />
+    </worksheet>
+    <worksheet name='Top 10 clientes con mayores rentas'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true'>Top 10 Clientes con Mayores Rentas</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='OLAP_SAKILA_CUSTOMER' name='federated.1a4jq0705nj5du1168lk30nnvxep' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1a4jq0705nj5du1168lk30nnvxep'>
+            <column caption='Amount' datatype='real' name='[AMOUNT]' role='measure' type='quantitative' />
+            <column caption='Name' datatype='string' name='[NAME]' role='dimension' type='nominal' />
+            <column caption='Rental Date' datatype='datetime' name='[RENTAL_DATE]' role='dimension' type='ordinal' />
+            <column-instance column='[AMOUNT]' derivation='Count' name='[cnt:AMOUNT:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Top N Customers by Sales]' derivation='InOut' name='[io:Top N Customers by Sales:nk]' pivot='key' type='nominal' />
+            <column-instance column='[RENTAL_DATE]' derivation='Month' name='[mn:RENTAL_DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[NAME]' derivation='None' name='[none:NAME:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1a4jq0705nj5du1168lk30nnvxep].[io:Top N Customers by Sales:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-manual-selection='true' user:ui-manual-selection-all-when-empty='true' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[io:Top N Customers by Sales:nk]' />
+              <groupfilter function='member' level='[io:Top N Customers by Sales:nk]' member='false' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1a4jq0705nj5du1168lk30nnvxep].[none:NAME:nk]'>
+            <groupfilter function='level-members' level='[none:NAME:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <computed-sort column='[federated.1a4jq0705nj5du1168lk30nnvxep].[none:NAME:nk]' direction='DESC' using='[federated.1a4jq0705nj5du1168lk30nnvxep].[cnt:AMOUNT:qk]' />
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1a4jq0705nj5du1168lk30nnvxep].[mn:RENTAL_DATE:ok]' direction='ASC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1a4jq0705nj5du1168lk30nnvxep].[cnt:AMOUNT:qk]' shelf='columns' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.1a4jq0705nj5du1168lk30nnvxep].[none:NAME:nk]</column>
+            <column>[federated.1a4jq0705nj5du1168lk30nnvxep].[io:Top N Customers by Sales:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.1a4jq0705nj5du1168lk30nnvxep].[io:Top N Customers by Sales:nk]' value='true' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1a4jq0705nj5du1168lk30nnvxep].[mn:RENTAL_DATE:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.1a4jq0705nj5du1168lk30nnvxep].[io:Top N Customers by Sales:nk] * [federated.1a4jq0705nj5du1168lk30nnvxep].[cnt:AMOUNT:qk])</rows>
+        <cols>([federated.1a4jq0705nj5du1168lk30nnvxep].[none:NAME:nk] / [federated.1a4jq0705nj5du1168lk30nnvxep].[mn:RENTAL_DATE:ok])</cols>
+      </table>
+      <simple-id uuid='{117049EF-05F4-4299-A0A0-C1050D6095B4}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Top 10 clientes con mayores rentas' tab-color='#dec77b'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1a4jq0705nj5du1168lk30nnvxep].[none:NAME:nk]' type='highlighter' />
+            <card pane-specification-id='0' param='[federated.1a4jq0705nj5du1168lk30nnvxep].[mn:RENTAL_DATE:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FF6B7BF8-DD48-44A0-9DE5-3EAB617CF7BE}' />
+    </window>
+    <window class='worksheet' name='Rentas por Nacionalidad ' tab-color='#17927d'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{BF3D7090-40A3-47D4-A050-4402184AFF1D}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Rentas Retrasadas' tab-color='#f66273'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{CF0344C7-FD49-48D7-ACA5-20A0759A4681}' />
+    </window>
+    <window class='worksheet' name='Sheet 4' tab-color='#4f779a'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{22E27496-B8AA-4A47-BF72-C4D09CC1A4FF}' />
+    </window>
+  </windows>
+</workbook>
