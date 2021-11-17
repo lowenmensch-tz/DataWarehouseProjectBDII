@@ -1,41 +1,107 @@
 /*
     @author kenneth.cruz@unah.hn
     @version 0.0.1
-    @date 11/12/2021
+    @date 11/15/2021
 */
 
 -- --------------------------------------------------------
 --                  --- SQL: ETL ---
 -- --------------------------------------------------------
 
--- Dimensión: Rentas
+-- Dimensión: Películas
+SELECT 
+    FILM_ID,
+    TITLE
+FROM 
+    FILM
+;
+
+
+-- Dimensión: Tiendas
 SELECT
-    RENTAL_ID AS rental_id, 
-    RENTAL_DATE AS rental_date 
-FROM 
-    RENTAL 
+    STORE.STORE_ID AS STORE_ID,
+    CONCAT(STAFF.FIRST_NAME, ' ', STAFF.LAST_NAME) AS MANAGER_NAME,
+    CITY.CITY AS CITY,
+    COUNTRY.COUNTRY AS COUNTRY
+FROM
+     STAFF
+INNER JOIN
+    STORE ON STAFF.STAFF_ID = STORE.MANAGER_STAFF_ID
+INNER JOIN 
+    ADDRESS ON STORE.ADDRESS_ID = ADDRESS.ADDRESS_ID
+INNER JOIN 
+    CITY ON ADDRESS.CITY_ID = CITY.CITY_ID
+INNER JOIN 
+    COUNTRY ON CITY.COUNTRY_ID = COUNTRY.COUNTRY_ID
 ;
 
 
--- Dimensión: Payment
+-- Dimensión: Categorías
 SELECT 
+    CATEGORY_ID,
+    NAME
 FROM 
+    CATEGORY
 ;
 
 
--- Dimensión: Address
+-- Dimensión: Películas - Categorías
 SELECT 
+    FILM_ID,
+    CATEGORY_ID 
 FROM 
+    FILM_CATEGORY
 ;
 
 
--- Dimensión: Tiempo   Pagos mensuales 
+-- Dimensión: Tiempo
 SELECT 
+    RENTAL_ID AS time_id, 
+    CONVERT(DATE, RENTAL_DATE) AS date,
+    DATEPART(YEAR, RENTAL_DATE) AS year,
+    DATEPART(MONTH, RENTAL_DATE) AS month,
+    DATEPART(WEEK, RENTAL_DATE) AS day, 
+    DATEPART(QUARTER, RENTAL_DATE) AS trimester,
+    CASE 
+        WHEN DATEPART(MONTH, RENTAL_DATE)/2 > 6 THEN 2 
+        ELSE 1 
+    END AS semester 
 FROM 
+    RENTAL
 ;
 
 
--- Hechos: Clientes
+-- Hechos: Pagos
 SELECT 
+    PAYMENT.PAYMENT_ID AS PAYMENT_ID,
+    T.FILM_ID AS FILM_ID,
+    T.STORE_ID AS STORE_ID,
+    T.CATEGORY_ID AS CATEGORY_ID,
+    T.FILM_CATEGORY_ID AS FILM_CATEGORY,
+    RENTAL.RENTAL_ID AS TIME_ID,
+    PAYMENT.PAYMENT_DATE AS PAYMENT_DATE,
+    PAYMENT.AMOUNT AS AMOUNT
 FROM 
+    PAYMENT
+INNER JOIN 
+    RENTAL ON PAYMENT.RENTAL_ID = RENTAL.RENTAL_ID 
+INNER JOIN 
+   (
+       SELECT 
+            INVENTORY.INVENTORY_ID AS INVENTORY_ID,
+            FILM_CATEGORY.FILM_ID AS FILM_CATEGORY_ID,
+            FILM.FILM_ID AS FILM_ID,
+            CATEGORY.CATEGORY_ID AS CATEGORY_ID,
+            STORE.STORE_ID AS STORE_ID
+       FROM 
+            INVENTORY
+        INNER JOIN 
+            STORE ON INVENTORY.STORE_ID = STORE.STORE_ID
+        INNER JOIN 
+            FILM ON INVENTORY.FILM_ID = FILM.FILM_ID
+        INNER JOIN
+            FILM_CATEGORY ON FILM.FILM_ID = FILM_CATEGORY.FILM_ID
+        INNER JOIN
+            CATEGORY ON FILM_CATEGORY.CATEGORY_ID = CATEGORY.CATEGORY_ID
+   ) AS T ON RENTAL.INVENTORY_ID = T.INVENTORY_ID
 ;
